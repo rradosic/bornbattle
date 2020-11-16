@@ -15,6 +15,7 @@ class Army
      */
     public function __construct(string $name, int $numberOfUnits)
     {
+        $this->name = $name;
         $this->numberOfUnits = $numberOfUnits;
     }
 
@@ -34,7 +35,7 @@ class Army
      */ 
     public function getNumberOfUnits(): int
     {
-        return $this->name;
+        return $this->numberOfUnits;
     }
 
     /**
@@ -44,6 +45,15 @@ class Army
      */
     public function reduceUnits(int $number=1): void
     {
-        if($this->numberOfUnits >= $number) $this->numberOfUnits -+ $number;
+        if($this->numberOfUnits >= $number) $this->numberOfUnits -= $number;
+    }
+
+    /**
+     * Returns true if the army still has units
+     * @return void 
+     */
+    public function hasUnits(): bool
+    {
+        return $this->getNumberOfUnits() > 0 ?  true : false;
     }
 }

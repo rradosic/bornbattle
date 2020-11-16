@@ -28,8 +28,8 @@ class BattleSimulationController extends Controller
         $firstArmy = new Army("Army 1", $request->army1);
         $secondArmy = new Army("Army 2", $request->army2);
 
-        $battleSimulation->battleArmies($firstArmy, $secondArmy);
+        $battleResult = $battleSimulation->battleArmies($firstArmy, $secondArmy);
 
-        dd($battleSimulation);
+        dd(json_encode($battleResult));
     }
 }
