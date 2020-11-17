@@ -2,12 +2,10 @@ version: '3'
 services:
   battle_simulation_api:
       build:
-        context: ./images/php-apache
-        dockerfile: ./Dockerfile
+        context: ./
+        dockerfile: ./images/php-apache/Dockerfile
       ports:
       - "8080:80"
-      volumes:
-          - ./BattleSimulationAPI/:/var/www/:rw
       environment:
           - APP_ENV=development
           - WEB_DOCUMENT_INDEX=public/index.php
