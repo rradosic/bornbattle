@@ -2,6 +2,7 @@
 
 namespace App\BattleSimulation;
 
-interface BattleSimulation {
-    public function battleArmies(Army $firstArmy, Army $secondArmy):BattleResult;
+interface BattleSimulation
+{
+    public function battleArmies(Army $firstArmy, Army $secondArmy): BattleResult;
 }

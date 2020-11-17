@@ -81,22 +81,22 @@ class RandomFactorBattleSimulation implements BattleSimulation
         //There is a small chance that the defending side will get a drone strike that insta kills attacker
 
         $droneChance = $this->calculateDroneChance();
-        
+
         $droneAttack = mt_rand(1, 100) < $droneChance ? true : false;
 
         if ($droneAttack) {
             $this->killUnitOnSide($this->attacker);
             $this->droneStrikes++;
-        }
-        else{
+        } else {
             $defenderUnit->health -= $attackerUnit->getAttack() - $defenderUnit->getArmor() * $defenderMorale;
         }
     }
 
-    private function calculateDroneChance(){
+    private function calculateDroneChance()
+    {
         $differenceInUnitNumbers = $this->armies[$this->attacker]->getNumberOfUnits() - $this->armies[$this->defender]->getNumberOfUnits();
         $droneChance = $this->baseDroneChance;
-        if($differenceInUnitNumbers > 0){
+        if ($differenceInUnitNumbers > 0) {
             $droneChance += $differenceInUnitNumbers / 10;
         }
 
@@ -130,7 +130,8 @@ class RandomFactorBattleSimulation implements BattleSimulation
      * @param int $side Side of the unit
      * @return void 
      */
-    private function killUnitOnSide(int $side){
+    private function killUnitOnSide(int $side)
+    {
         $this->assignNewUnitToSide($side);
         $this->reduceUnitFromSide($side);
         $this->casualties++;

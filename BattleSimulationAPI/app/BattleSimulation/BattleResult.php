@@ -2,7 +2,8 @@
 
 namespace App\BattleSimulation;
 
-class BattleResult {
+class BattleResult
+{
     public string $victor;
     public string $loser;
     public int $totalCasualties;
@@ -13,7 +14,8 @@ class BattleResult {
      * Gives an array representation of this result
      * @return array
      */
-    public function toArray() {
+    public function toArray()
+    {
         return [
             'victor' => $this->victor,
             'loser' => $this->loser,

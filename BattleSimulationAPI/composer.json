@@ -1,7 +1,7 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
-    "keywords": ["framework", "laravel", "lumen"],
+    "name": "rradosic/bornbattle",
+    "description": "Battle simulator",
+    "keywords": ["battle"],
     "license": "MIT",
     "type": "project",
     "require": {

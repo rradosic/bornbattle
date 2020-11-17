@@ -26,5 +26,4 @@ class Unit
     {
         return $this->attack;
     }
-
 }

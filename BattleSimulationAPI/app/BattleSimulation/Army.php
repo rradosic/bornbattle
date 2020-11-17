@@ -32,7 +32,7 @@ class Army
     /**
      * Returns the number of units remaining in the army
      * @return int number of the units
-     */ 
+     */
     public function getNumberOfUnits(): int
     {
         return $this->numberOfUnits;
@@ -43,9 +43,9 @@ class Army
      * @param int $number Number to reduce by. Defualts to 1
      * @return void 
      */
-    public function reduceUnits(int $number=1): void
+    public function reduceUnits(int $number = 1): void
     {
-        if($this->numberOfUnits >= $number) $this->numberOfUnits -= $number;
+        if ($this->numberOfUnits >= $number) $this->numberOfUnits -= $number;
     }
 
     /**
