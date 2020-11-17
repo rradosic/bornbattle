@@ -62,6 +62,7 @@ $app->bind(App\BattleSimulation\BattleSimulation::class, App\BattleSimulation\Ra
 */
 
 $app->configure('app');
+$app->configure('battle');
 
 /*
 |--------------------------------------------------------------------------

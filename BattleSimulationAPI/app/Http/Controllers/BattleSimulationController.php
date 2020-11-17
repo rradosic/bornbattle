@@ -21,15 +21,18 @@ class BattleSimulationController extends Controller
     public function battle(Request $request, BattleSimulation $battleSimulation)
     {
         $this->validate($request, [
-            'army1'=> 'required|integer',
-            'army2'=> 'required|integer',
+            'army1' => 'required|integer',
+            'army2' => 'required|integer',
         ]);
 
-        $firstArmy = new Army("Army 1", $request->army1);
-        $secondArmy = new Army("Army 2", $request->army2);
+        $firstArmy = new Army(config('battle.firstArmyName'), $request->army1);
+        $secondArmy = new Army(config('battle.secondArmyName'), $request->army2);
 
         $battleResult = $battleSimulation->battleArmies($firstArmy, $secondArmy);
 
-        dd(json_encode($battleResult));
+        return response()->json([
+            'success' => true,
+            'result' => $battleResult->toArray()
+        ]);
     }
 }
