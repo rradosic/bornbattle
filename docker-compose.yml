@@ -7,7 +7,7 @@ services:
       ports:
       - "8080:80"
       volumes:
-          - ./BattleSimulationAPI/:/var/www/
+          - ./BattleSimulationAPI/:/var/www/:rw
       environment:
           - APP_ENV=development
           - WEB_DOCUMENT_INDEX=public/index.php

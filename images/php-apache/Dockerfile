@@ -4,6 +4,7 @@ COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 
 RUN chown -R www-data:www-data /var/www
+RUN chmod -R 755 /var/www/storage
 
 RUN apt-get update && apt-get -y install cron rsyslog
 COPY schedule-cron /etc/cron.d/schedule-cron
